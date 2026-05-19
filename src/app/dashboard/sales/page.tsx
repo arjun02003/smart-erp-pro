@@ -165,7 +165,7 @@ export default function SalesPage() {
             <YAxis stroke="#64748b" fontSize={11} tickFormatter={v => `₹${(v/1000)}K`} />
             <Tooltip 
               contentStyle={{ background: '#111118', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', fontSize: '12px' }}
-              formatter={(v: number) => [`₹${v.toLocaleString('en-IN')}`, 'Sales']}
+              formatter={(value) => `₹${Number(value).toLocaleString('en-IN')}`}
             />
             <Area type="monotone" dataKey="sales" stroke="#8b5cf6" fill="url(#sg)" strokeWidth={2} />
           </AreaChart>

@@ -162,7 +162,7 @@ export default function ReportsPage() {
               <YAxis stroke="#64748b" fontSize={11} tickFormatter={v => `₹${(v/1000)}K`} />
               <Tooltip 
                 contentStyle={{ background: '#111118', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', fontSize: '12px' }}
-                formatter={(v: number) => [`₹${v.toLocaleString('en-IN')}`]}
+                formatter={(value) => `₹${Number(value).toLocaleString('en-IN')}`}
               />
               <Line type="monotone" dataKey="sales" name="Sales" stroke="#6366f1" strokeWidth={2} dot={{ fill: '#6366f1', r: 3 }} />
               <Line type="monotone" dataKey="profit" name="Profit" stroke="#10b981" strokeWidth={2} dot={{ fill: '#10b981', r: 3 }} />
@@ -180,7 +180,7 @@ export default function ReportsPage() {
               </Pie>
               <Tooltip 
                 contentStyle={{ background: '#111118', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', fontSize: '12px' }}
-                formatter={(v: number) => [`${v}%`]}
+                formatter={(value) => `${Number(value)}%`}
               />
             </PieChart>
           </ResponsiveContainer>

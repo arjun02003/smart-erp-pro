@@ -124,7 +124,7 @@ export default function DashboardPage() {
               <YAxis stroke="#64748b" fontSize={11} tickFormatter={v => `₹${(v/1000)}K`} />
               <Tooltip
                 contentStyle={{ background: '#111118', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', fontSize: '12px' }}
-                formatter={(v: number) => [`₹${v.toLocaleString('en-IN')}`, '']}
+                formatter={(value) => `₹${Number(value).toLocaleString('en-IN')}`}
               />
               <Area type="monotone" dataKey="sales" stroke="#6366f1" fill="url(#salesGrad)" strokeWidth={2} />
               <Area type="monotone" dataKey="profit" stroke="#10b981" fill="url(#profitGrad)" strokeWidth={2} />
